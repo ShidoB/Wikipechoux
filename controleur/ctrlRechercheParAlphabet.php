@@ -16,10 +16,8 @@ if(isset($_POST['Rechercher'])&& $_POST['Rechercher']){
 
     include "$racine/vue/vueEntete.php";
     include "$racine/vue/vueRechercheParAlphabet.php";
-    include "$racine/vue/vuePied.php";
 }
 else{
     include "$racine/vue/vueEntete.php";
     include "$racine/vue/vueRechercheParAlphabet.php";
-    include "$racine/vue/vuePied.php";
 }

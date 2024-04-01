@@ -1,6 +1,7 @@
 <?php
 
-class User{
+class User
+{
 
     //Attributs privés
     private $username;
@@ -8,36 +9,43 @@ class User{
     private $mail;
     private $name;
     private $firstname;
-    
+
 
     //Constructeur
     //public function __construct(string $usrn, string $pswrd, string $email, string $name, string $firstname){
-    public function __construct(string $usrn, string $pswrd){
+    public function __construct(string $usrn, string $pswrd)
+    {
         $this->username = $usrn;
         $this->h_password = $pswrd;
+        //$this->h_password = $pswrd;
         /*$this->mail = $email;
         $this->name = $name;
         $this->firstname = $firstname;*/
     }
 
     //Accesseurs
-    public function getUsername(){
+    public function getUsername()
+    {
         return $this->username;
     }
 
-    public function getPassword(){
+    public function getPassword()
+    {
         return $this->h_password;
     }
 
-    public function getMail(){
+    public function getMail()
+    {
         return $this->mail;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function getFirstname(){
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 

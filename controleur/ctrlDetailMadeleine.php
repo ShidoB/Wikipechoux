@@ -16,5 +16,3 @@ if($unObjet != null){
 else{
     include "$racine/vue/vueAccueil.php";
 }
-
-include "$racine/vue/vuePied.php";

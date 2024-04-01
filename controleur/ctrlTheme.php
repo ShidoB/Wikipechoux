@@ -15,6 +15,3 @@ include "$racine/vue/vueEntete.php";
 
 
 include "$racine/vue/vueTheme.php";
-
-//Vue pied de page
-include "$racine/vue/vuePied.php";

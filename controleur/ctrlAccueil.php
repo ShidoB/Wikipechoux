@@ -26,7 +26,3 @@ include_once "$racine/vue/vueEntete.php";
 
 // Corps de la page
 include_once "$racine/vue/vueAccueil.php";
-
-// Pied de page
-include_once "$racine/vue/vuePied.php";
-

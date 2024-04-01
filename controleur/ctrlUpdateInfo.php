@@ -13,6 +13,3 @@
         $e->getMessage();
         header("Location: ./?action=modifInfo");
     }
-
-
-?>

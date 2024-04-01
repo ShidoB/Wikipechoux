@@ -14,12 +14,3 @@ if (isset($_GET['action']) && $_GET['action'] === 'motAleatoire') {
 }else{
     include "$racine/vue/vueMotAleatoire.php";
 }
-
-
-
-
-
-  
-
-//Vue pied de page
-include "$racine/vue/vuePied.php";

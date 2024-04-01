@@ -5,7 +5,8 @@ include_once "$racine\modele\ModeleMotDAO.php";
 include_once "$racine\classes\Mot.php";
 
 // Fonction pour obtenir le mot par ID ou par libellé
-function getMot($id = null, $libelle = null) {
+function getMot($id = null, $libelle = null)
+{
     if ($id !== null) {
         $unMot = ModeleMotDAO::getMotbyId($id);
     } elseif ($libelle !== null) {
@@ -27,7 +28,7 @@ $unMot = getMot($id, $motLibelle);
 
 if ($unMot != null) {
     $estTrouve = true;
-    
+
     $idMot = $unMot->getId();
     $lesPhotos = ModeleMotDAO::getPhoto($idMot);
     $libelle = $unMot->getLibelle();
@@ -41,6 +42,4 @@ include "$racine/vue/vueEntete.php";
 // Affichage
 include "$racine/vue/vueAffichage.php";
 
-// Pied de page
-include "$racine/vue/vuePied.php";
-?>
+

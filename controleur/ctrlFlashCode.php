@@ -22,11 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Afficher le formulaire
 include_once('vue/vueEntete.php');
 include_once('vue/vueFlashCode.php');
-include_once('vue/vuePied.php');
 // Utiliser la classe Routeur pour obtenir le contrôleur
 $action = isset($_GET['action']) ? $_GET['action'] : 'defaut';
 $controleur = Routeur::getControleur($action);
 
 // Inclure le contrôleur
 include_once($controleur);
-?>
+

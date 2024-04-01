@@ -5,144 +5,109 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ?>
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleEntete.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title></title>
 </head>
+
 <body>
-<div class="all">
-    <div class="titre">
-        <p>WIKIPECHOUX</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
-    </div>
-    <nav>
-        <label for="toggle">☰</label>
-        <input type="checkbox" id="toggle" class="checkbox1">
-        <div class="main_pages">
-            <div class="espace"></div>
-        <li class="nav-item">
-                    <a class="nav-link" href="./?action=acceuil">Acceuil</a>
-                </li>
-                
-                <div class="barre-grise"></div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=intro">Introduction</a>
-                </li>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./?action=acceuil">Wikipechoux</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./?action=acceuil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./?action=intro">Introduction</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Autre
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <h5 class="dropdown-header">Mots</h5>
+                            </li>
 
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=rechercheParAlphabet">Recherche par mot</a>
+                            <li><a class="dropdown-item" href="./?action=rechercheParAlphabet">Recherche par Mot</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./?action=theme">Recherche par Thème</a></li>
+                            <li><a class="dropdown-item" href="./?action=motAleatoire">Mot Aléatoire</a></li>
+
+                            <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <h5 class="dropdown-header">Autre</h5>
+                    </li>
+                    <li><a class="dropdown-item" href="./?action=madeleines">Madeleine</a></li>
+                    <li>
+                    <li><a class="dropdown-item" href="./?action=flashCode">Flash Code</a></li>
+                    <li><a class="dropdown-item" href="./?action=historique">Historique</a></li>
+                </ul>
                 </li>
-            
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=theme">Recherche par theme</a>
-                </li>
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=madeleines">Madeleine</a>
-                </li>
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=motAleatoire">Mot aléatoire</a>
-                </li>
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=flashCode">Flash code</a>
-                </li>
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=historique">Historique</a>
-                </li> 
-                <div class="barre-grise"></div>
-                <br> 
-                
                 <?php
-                    if(isset($_SESSION['login'])){
+                if (isset($_SESSION['login'])) {
                 ?>
-                <div class="espace2"></div>
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a href="./?action=mesInfos" class="nav-link">Mes informations</a>
-                </li>
-                
-                <div class="barre-grise"></div>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=login&type=out">Se déconnecter</a>
-                </li>
-                <div class="barre-grise"></div>
-                <?php }else{?>
-                <li class="nav-item">
-                    <a class="nav-link" href="./?action=login&type=in">Se connecter</a>
-                </li>
 
-                
-                
-                
-                <?php }?>
+                    <li class="nav-item dropdown">
+                        <button class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gestion de l'Encyclopédie
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <h5 class="dropdown-header">Gestion des Mots</h5>
+                            </li>
 
-            </ul>
+                            <li><a class="dropdown-item" href="./?action=gererMot">Gerer les mots</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
-            
+                            <li>
+                                <h5 class="dropdown-header">Gestion des Madeleines</h5>
+                            </li>
+                            <li><a class="dropdown-item" href="./?action=">Gerer les madeleines</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
+                            <li>
+                                <h5 class="dropdown-header">Gestion des Montres</h5>
+                            </li>
+                            <li><a class="dropdown-item" href="./?action=">Gerer les montres</a>
+                            </li>
+                        </ul>
+                    </li>
 
-    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./?action=login&type=out">Se déconnecter</a>
+                    </li>
 
+                <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="./?action=login&type=in">Se
+                            connecter</a>
+                    </li>
+                <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-
-
-
-
-
-
-
-    <div class="mid">
-  <div class="row row1">
-      <div class="col-sx-12 col-md-12 col-lg-12">
-          <form id="searchForm" action="./?action=affichage" class="d-flex flex-row" method="POST">
-              <input type="text" id="mot" name="mot" placeholder="Saisir un mot..." class="form-control" onfocus="clearPlaceholder(this)">
-              <div class="proposition">
-                  <div id="suggestionsContainer" class="suggestions-container" style="display: block;"></div>
-              </div>
-              <script src="modele/suggestion.js"></script>
-              <img src="image/loupe-icon.png" alt="Search Icon" class="search-icon">
-              <!-- La balise </button> était incorrecte dans votre code, je l'ai supprimée -->
-          </form>
-      </div>
-  </div>
-</div>
-
-</div>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var searchInput = document.querySelector('#searchForm input[type="text"]');
-        var searchIcon = document.querySelector('#searchForm .search-icon');
-
-        searchIcon.addEventListener('click', function() {
-            searchInput.classList.toggle('show');
-            if (searchInput.classList.contains('show')) {
-                setTimeout(function() {
-                    searchInput.focus();
-                }, 0);
-            }
-        });
-    });
-</script>
-
-
-
-
-
-  <script>
-    function clearPlaceholder(input) {
-      input.placeholder = '';
-    }
-  </script>
-
-</div>
-
+</body>
