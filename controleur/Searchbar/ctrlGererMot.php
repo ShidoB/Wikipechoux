@@ -1,5 +1,4 @@
 <?php
-include "$racine/vue/vueEntete.php";
 include "vueGererMot.php";
 require_once "config.php";
 

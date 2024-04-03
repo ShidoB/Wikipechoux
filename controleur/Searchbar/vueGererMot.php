@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
 
 </head>
-<?php
-include "$racine/vue/vueEntete.php";
-?>
 
 <body class="bg-info">
     <div class="container">
