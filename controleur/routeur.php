@@ -22,7 +22,7 @@ class Routeur
         'detail' => 'ctrlDetailMadeleine.php',
         'intro' => 'ctrlIntroduction.php',
         'historique' => 'ctrlHistorique.php',
-        'gererMot' => 'searchbar/ctrlGererMot.php'
+        'gererMot' => 'Searchbar/ctrlGererMot.php'
     );
 
     //Fonction qui retourne le fichier controleur à utiliser

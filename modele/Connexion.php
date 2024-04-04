@@ -41,5 +41,4 @@
         public function __destruct(){
             self::$connexion = null;
         }
-     }   
-?>
+     }
