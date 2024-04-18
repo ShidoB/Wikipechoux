@@ -60,7 +60,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </ul>
                 </li>
                 <?php
-                if (isset($_SESSION['login'])) {
+                //if (isset($_SESSION['login'])) {
                 ?>
 
                     <li class="nav-item dropdown">
@@ -73,6 +73,8 @@ if (session_status() == PHP_SESSION_NONE) {
                             </li>
 
                             <li><a class="dropdown-item" href="./?action=gererMot">Gerer les mots</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./?action=ajoutMot">Ajouter un mot</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -99,12 +101,12 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link" href="./?action=login&type=out">Se déconnecter</a>
                     </li>
 
-                <?php } else { ?>
+                <?php //} else { ?>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="./?action=login&type=in">Se
                             connecter</a>
                     </li>
-                <?php } ?>
+                <?php //} ?>
                 </ul>
             </div>
         </div>

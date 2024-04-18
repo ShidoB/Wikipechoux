@@ -1,0 +1,15 @@
+/* Ajustement de la largeur de la boîte des suggestions */
+.suggestions-container {
+    width: 100%;
+    max-height: 200px;
+    overflow-x: auto;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .proposition{
+    background-color: rgb(255, 255, 255);
+  }
+ 

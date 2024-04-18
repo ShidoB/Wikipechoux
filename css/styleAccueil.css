@@ -1,6 +1,6 @@
 body, nav{
 background-image: 
-  url("/Wikipechoux/image/Couverture2.png");
+  url("../image/Couverture2.png");
   background-size:cover;
   background-repeat: no-repeat;
 }

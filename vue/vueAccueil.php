@@ -8,9 +8,9 @@
 </head>
 
 <body>
-   <div class="d-flex justify-content-center">
-      <div class="p-2">
-         <h1 class=" text-white">Géographie d'un multivers</h1>
+   <div class="d-flex justify-content-center p-4">
+      <div class="p-4">
+         <h1 class=" text-white p-4">Géographie d'un multivers</h1>
       </div>
    </div>
 </body>

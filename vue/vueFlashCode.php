@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleFlashCode.css">
     <title></title>
+    <link rel="stylesheet" href="css/styleFond.css">
 </head>
 
 <div class="flashcode1">
 
     <body style="background-color: lightgray">
         <div class="row">
-            <div class="col-4 mx-auto text-center">
+            <div class="mx-auto text-center">
                 <br>
                 <h1>Flash Code</h1>
                 <img src="image/flashCode.png" style="padding: 30px;" alt="Flash Code Image">

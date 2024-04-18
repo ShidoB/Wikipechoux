@@ -7,6 +7,7 @@ class Routeur
     private static $lesActions = array(
         'defaut' => 'ctrlAccueil.php',
         'affichage' => 'ctrlAffichageMot.php',
+        'affichageAdmin' => 'CtrlAdminAfficherMot.php',
         'motAleatoire' => 'ctrlMotAleatoire.php',
         'rechercheParAlphabet' => 'ctrlRechercheParAlphabet.php',
         'dico' => 'ctrlDictionnaire.php',
@@ -22,7 +23,8 @@ class Routeur
         'detail' => 'ctrlDetailMadeleine.php',
         'intro' => 'ctrlIntroduction.php',
         'historique' => 'ctrlHistorique.php',
-        'gererMot' => 'Searchbar/ctrlGererMot.php'
+        'gererMot' => 'ctrlGererMot.php',
+        'ajoutMot' => 'ctrlAjoutMot.php'
     );
 
     //Fonction qui retourne le fichier controleur à utiliser

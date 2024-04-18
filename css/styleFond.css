@@ -1,0 +1,14 @@
+nav,body{
+background-image: 
+  url("../image/FondBleu.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+*{
+color: white;
+}
+
+#searchform{
+  background-image: none;
+}

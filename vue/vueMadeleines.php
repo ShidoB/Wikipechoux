@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleMadeleines.css">
+    <link rel="stylesheet" href="css/styleFond.css">
     <title></title>
 </head>
 
@@ -32,7 +33,7 @@
 
             </h2>
             <br> <br>
-            <table class="table col-md-8 mx-auto text-center">
+            <table class="table mx-auto text-center">
                 <thead>
                     <tr>
                         <th scope="col text-center">Id</th>

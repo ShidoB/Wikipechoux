@@ -5,10 +5,7 @@
 
     
     class ModeleMotDAO{
-        
-       
-        
-        
+     
         //Méthodes
        
 
@@ -45,8 +42,45 @@
            
             return $unMot;
             
-        } 
-        
+        }
+
+    public static function getMotbyLibellePrecis($libelle)
+    {
+        $libelle = $libelle;
+        $sql = "Select * from mot where libelle = :libelle";
+        $req = Connexion::getInstance()->prepare($sql);
+        $req->bindValue(":libelle", $libelle, PDO::PARAM_STR);
+        $req->execute();
+        $ligne = $req->fetch();
+
+        $unMot = null;
+
+        if ($ligne == true
+        ) {
+            $unMot = new Mot($ligne['id'], $ligne['libelle'], $ligne['definition'], $ligne['date_creation'], ModeleThemeDAO::getThemeById($ligne['id_theme']));
+        }
+
+        return $unMot;
+    }
+
+    public static function getIdByLibellePrecis($libelle)
+    {
+        $libelle = $libelle;
+        $sql = "Select * from mot where libelle = :libelle";
+        $req = Connexion::getInstance()->prepare($sql);
+        $req->bindValue(":libelle", $libelle, PDO::PARAM_STR);
+        $req->execute();
+        $ligne = $req->fetch();
+
+        $unMot = null;
+
+        if ($ligne == true
+        ) {
+            $unMot = new Mot($ligne['id'], $ligne['libelle'], $ligne['definition'], $ligne['date_creation'], ModeleThemeDAO::getThemeById($ligne['id_theme']));
+        }
+
+        return $unMot;
+    } 
         public static function getMotbyTheme($id_theme) {
             $sql = "Select * from mot where id_theme = :id_theme";
             $req = Connexion :: getInstance()->prepare($sql);
@@ -104,9 +138,7 @@
         
         public static function getPhoto ($idMot)
         {
-            if (self::isPhoto($idMot))
-            {
-
+            if (self::isPhoto($idMot)) {
                 $req = Connexion::getInstance()->prepare("Select fichier from photo where id_mot = ".$idMot);
                 $req->execute();
                 $lesPhotos = $req->fetchall();
@@ -209,32 +241,53 @@
         
             return $ligne;
         }
-        
 
+    public static function obtenirMotsAssocies($motID)
+    {
+        // Récupérer le mot principal
+        $motPrincipal = self::getMotbyId($motID);
 
-            
-            public static function obtenirMotsAssocies($motID) {
-                // Récupérer le mot principal
-                $motPrincipal = self::getMotbyId($motID);
-            
-                // Vérifier si le mot principal a été trouvé
-                if ($motPrincipal) {
-                    // Récupérer les mots associés par thème
-                    $motsAssociesParTheme = self::getMotbyTheme($motPrincipal->getTheme()->getId());
-            
-                    // Récupérer les mots associés par lettre
-                    $motsAssociesParLettre = self::getMotsByLettre($motPrincipal->getLibelle()[0]);
-            
-                    // Fusionner les résultats (éliminer les doublons)
-                    $motsAssocies = array_merge($motsAssociesParTheme, $motsAssociesParLettre);
-                    $motsAssocies = array_unique($motsAssocies, SORT_REGULAR);
-            
-                    return $motsAssocies;
-                }
-        
-            return null; // Retourner null si le mot principal n'est pas trouvé
+        // Vérifier si le mot principal a été trouvé
+        if ($motPrincipal) {
+            // Récupérer les mots associés par thème
+            $motsAssociesParTheme = self::getMotbyTheme($motPrincipal->getTheme()->getId());
+
+            // Récupérer les mots associés par lettre
+            $motsAssociesParLettre = self::getMotsByLettre($motPrincipal->getLibelle()[0]);
+
+            // Fusionner les résultats (éliminer les doublons)
+            $motsAssocies = array_merge($motsAssociesParTheme, $motsAssociesParLettre);
+            $motsAssocies = array_unique($motsAssocies, SORT_REGULAR);
+
+            return $motsAssocies;
         }
-        
+
+        return null; // Retourner null si le mot principal n'est pas trouvé
+    }
+
+    // public static function getMaxId(){
+    //     $req = 'SELECT MAX(id)  FROM Mot';
+    //     $nb = $req->fetchColumn(); 
+
+    //     return $nb;
+    // }
+
+    public static function insertMot($libelle, $definition)
+    {
+        $ok = false;
+        // Insertion du mot dans la table Mot
+        $date_creation = date('Y-m-d H:i:s'); // Date et heure actuelles
+        $id_theme = 1; // Toujours 1 pour id_theme
+        $sql = "INSERT INTO Mot (libelle, definition, date_creation, id_theme) VALUES (:libelle, :definition, :date_creation, :id_theme)";
+        $req = Connexion::getInstance()->prepare($sql);
+        $req->bindValue(":id_theme", $id_theme, PDO::PARAM_INT);
+        $req->bindValue(':libelle', $libelle);
+        $req->bindValue(':definition', $definition);
+        $req->bindValue(':date_creation', $date_creation);
+
+        if ($req->execute()) $ok = true;
+        return $ok;
+    }
             
     }   
 

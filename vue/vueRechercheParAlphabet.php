@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleRechercheParAlphabet.css">
+    <link rel="stylesheet" href="css/styleFond.css">
     <title></title>
 </head>
 
@@ -11,7 +12,7 @@
 
     <div class="contenuRechercheParAlphabet">
         <div class="row">
-            <div class="col-4 mx-auto text-center">
+            <div class="mx-auto text-center text-black">
                 <form action="./?action=rechercheParAlphabet" method="POST">
                     <div>
                         <select name="lettre" id="lettre">
