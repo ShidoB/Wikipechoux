@@ -34,14 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <hr class="my-1">
         <!--action="./?action=affichage" -->
         <form id="searchForm" method="POST">
-          <div class="input-group">
+          <div class="input-group mb-3">
             <!-- onfocus="clearPlaceholder(this)-->
             <input class="form-control form-control-lg" type="text" name="mot" id="mot" placeholder="Saisir un mot..." onfocus="clearPlaceholder(this)" aria-label=".form-control-lg example">
             <br>
             <script src="controleur/script.js"></script>
-          </div>
-          <div class="input-group-append">
-            <input type="submit" name="submit" value="Rechercher" class="btn btn-info btn-lg rounded-3">
+            <input type="submit" name="submit" value="Rechercher" class="btn btn-primary btn-lg">
           </div>
         </form>
       </div>
@@ -116,18 +114,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <tr>
                   <td><img src="./image/<?= $photo['fichier'] ?>" alt="<?= $photo['fichier'] ?>" class="img-thumbnail w-50"></td>
                   <td>
-                    <form method="post" action="./controleur/ctrlGererMot.php?action=modifierPhoto">
-                      <input class="m-1" type="hidden" name="idPhoto" value="<?= $idMot ?>">
+                    <form method="post" action="./?action=modifierPhoto">
+                      <input class="m-1" type="hidden" name="idPhoto" value="<?= $photo['fichier'] ?>">
                       <input type="file" name="nouveauFichier" value="<?= $photo['fichier'] ?>" class="form-control m-1" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                       <button type="submit" class="btn btn-success m-1">Modifier</button>
                     </form>
-
-                    <!-- Ajouter ce lien pour chaque ligne dans le tableau modal -->
-                    <a href="./controleur/ctrlGererMot.php?action=supprimerPhoto&idPhoto=<?= $idMot ?>" class="btn btn-danger">Supprimer</a>
+                    <a href="./?action=supprimerPhoto=<?= $photo['fichier'] ?>" class="btn btn-danger">Supprimer</a>
                   </td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
+            <h3 class="text-black">Ajouter une nouvelle une image</h3>
+            <div class="input-group mb-3">
+
+              <input class="form-control" type="file" id="formFile" name="formFile" accept="image/*" onchange="checkFile(this)">
+              <button type="submit" class="btn btn-primary" name="Ajouter">Ajouter</button>
+            </div>
           </table>
         </div>
       </div>

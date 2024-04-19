@@ -24,7 +24,9 @@ class Routeur
         'intro' => 'ctrlIntroduction.php',
         'historique' => 'ctrlHistorique.php',
         'gererMot' => 'ctrlGererMot.php',
-        'ajoutMot' => 'ctrlAjoutMot.php'
+        'ajoutMot' => 'ctrlAjoutMot.php',
+        'modifierPhoto' => 'ctrlGererMot.php?action=modifierPhoto',
+        'supprimerPhoto' => 'ctrlGererMot.php?action=supprimerPhoto' 
     );
 
     //Fonction qui retourne le fichier controleur à utiliser

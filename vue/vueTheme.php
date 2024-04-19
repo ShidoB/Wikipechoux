@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleTheme.css">
+    <link rel="stylesheet" href="css/styleFond.css">
     <title></title>
 </head>
 
 <body>
 
     <div class="contenu">
-        <div class="col-4 mx-auto text-center">
+        <div class=" mx-auto text-center">
             <form action="./?action=theme" method="POST">
                 <div>
-                    <select name="theme" id="theme">
+                    <select name="theme" id="theme" class="text-black">
                         <?php
                         foreach ($lesThemes as $unTheme) {
                         ?>
-                            <option value="<?= $unTheme->getId() ?>"><?= $unTheme->getLibelle() ?></option>
+                            <option class="text-black" value="<?= $unTheme->getId() ?>"><?= $unTheme->getLibelle() ?></option>
                         <?php
                         }
                         ?>
